@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817023233) do
+ActiveRecord::Schema.define(:version => 20120817210315) do
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "usuario_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "authentications", ["token"], :name => "index_authentications_on_token", :unique => true
+  add_index "authentications", ["uid"], :name => "index_authentications_on_uid", :unique => true
+  add_index "authentications", ["usuario_id"], :name => "index_authentications_on_usuario_id", :unique => true
 
   create_table "cidades", :force => true do |t|
     t.string   "nome"
@@ -37,5 +50,21 @@ ActiveRecord::Schema.define(:version => 20120817023233) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "usuarios", :force => true do |t|
+    t.string   "email",              :default => "", :null => false
+    t.integer  "sign_in_count",      :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "nome"
+    t.string   "facebook_link"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
+  add_index "usuarios", ["facebook_link"], :name => "index_usuarios_on_facebook_link", :unique => true
 
 end

@@ -4,7 +4,9 @@
 			
 				<div class="site_id">
 					<h1><span>E</span>life<span>x</span></h1> 
-					<%= link_to image_tag("facebook_connect.png"), "#" %>
+					<% unless usuario_signed_in? %>
+						<%= link_to image_tag("facebook_connect.png"), '/auth/facebook/' %>
+					<%end%>
 				</div>
 				
 				<div class="menu">

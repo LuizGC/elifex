@@ -1,9 +1,16 @@
 Elifex::Application.routes.draw do
+  devise_for :usuarios
+	devise_scope :usuario do
+		delete '/logout' => 'devise/sessions#destroy', :as => :usuario_session
+	end
+	
   resources :setores
 
   resources :cidades
 
   resources :empresas
+	
+	match '/auth/:provider/callback' => 'authentications#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
