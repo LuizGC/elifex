@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  info: MyText
+  setor_id: 1
+  cidade_id: 1
+
+two:
+  nome: MyString
+  info: MyText
+  setor_id: 1
+  cidade_id: 1
