@@ -1,29 +1,5 @@
-<h1>Listing empresas</h1>
+<h1>Você conhece?</h1>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Info</th>
-    <th>Setor</th>
-    <th>Cidade</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render(:partial => "layouts/empresa_vote", :collection => @empresas) %>
 
-<% @empresas.each do |empresa| %>
-  <tr>
-    <td><%= empresa.nome %></td>
-    <td><%= empresa.info %></td>
-    <td><%= empresa.setor_id %></td>
-    <td><%= empresa.cidade_id %></td>
-    <td><%= link_to 'Show', empresa %></td>
-    <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-    <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Empresa', new_empresa_path %>
+<div class="cf"></div>

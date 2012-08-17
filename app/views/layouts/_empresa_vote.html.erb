@@ -1,0 +1,33 @@
+<%
+#facilitar leitura do codigo
+empresa = empresa_vote
+%>
+<div class="empresa" id="<%=empresa.id%>">
+		<h3><%= empresa.nome %></h3>
+		<%=image_tag("lavrasfolia.jpg")%>
+		
+		<div class="info" >
+			
+			<p><%=empresa.setor.nome%></p>
+			
+			<div>
+				<%=link_to image_tag('vou.png'), '#'%>
+				<%=link_to image_tag('nao_vou.png'), '#'%>
+			</div>
+			
+			<div class="avaliacao">
+				<div class="vou avaliado">
+					30
+				</div>
+				
+				<div class="nao_vou avaliado">
+					20
+				</div>
+			</div>
+
+		
+		</div>
+				
+		<div class="cf"></div>
+</div>
+
