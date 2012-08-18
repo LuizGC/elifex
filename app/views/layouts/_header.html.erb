@@ -5,7 +5,7 @@
 				<div class="site_id">
 					<h1><span>E</span>life<span>x</span></h1> 
 					<% unless usuario_signed_in? %>
-						<%= link_to image_tag("facebook_connect.png"), '/auth/facebook/' %>
+						<%= link_to image_tag("facebook_connect.png"), facebook_path %>
 					<%end%>
 				</div>
 				

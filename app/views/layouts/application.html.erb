@@ -14,6 +14,13 @@
 		<%= csrf_meta_tags %>
 		
 		<script>
+			<%unless usuario_signed_in?%>
+				$(document).ready( function(){
+					$('.aviso_loga').click(function(){
+						window.location.href="<%=url_for(facebook_path)%>";
+					});
+				});
+			<%end%>
 			<%= yield :js%>
 		</script>
 	</head>

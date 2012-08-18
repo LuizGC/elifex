@@ -8,9 +8,32 @@
 	h1{
 		text-align: center;
 	}
+	
 	div.paging{
 		text-align: center;
+		font-size:14px;
+		margin: 10px 0 0 0;
+		nav{
+			span{
+				a{
+					width:100%;
+					padding:2px 4px 3px 4px;
+					border:solid 1px #DDDDDD;
+					text-decoration:none;
+				}
+				a:hover{
+					background:#4A4A4A;
+					color: #FAFAFA;
+				}
+			}
+			span.current{
+				ont-weight:bold;
+			}
+		}
+	
 	}
+	
+	
 	div.empresa{
 		width: 94%/3 + 0.368%;
 		min-width: 353px;

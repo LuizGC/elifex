@@ -15,3 +15,4 @@ $(document).ready(function(){
 <%= render(:partial => "layouts/empresa_vote", :collection => @empresas) %>
 
 <div class="cf"></div>
+<div class="paging"><%= paginate @empresas %></div>

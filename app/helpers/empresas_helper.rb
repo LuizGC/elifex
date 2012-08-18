@@ -24,7 +24,7 @@ module EmpresasHelper
 	
 	private
 	def link_opcao_without_action(opcao)
-		link_to image_tag(image_name(opcao)), '#', :class => 'aviso_loga'
+		link_to image_tag(image_name(opcao)), 'javascript:avoid(0);', :class => 'aviso_loga'
 	end
 	
 	private

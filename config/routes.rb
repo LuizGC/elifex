@@ -62,7 +62,8 @@ Elifex::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'empresas#index'
+  root :to => redirect("/empresas")
+
 
   # See how all your routes lay out with "rake routes"
 
