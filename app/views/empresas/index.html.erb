@@ -1,3 +1,15 @@
+<%content_for :js do%>
+$(document).ready(function(){
+		$('a.votar').bind('ajax:complete', function(xhr, result){
+			avaliacao = jQuery.parseJSON(result.responseText)
+			$("#"+avaliacao.empresa_id+" div #"+!avaliacao.status).remove();
+			$("#"+avaliacao.empresa_id+" div #"+avaliacao.status).attr("href", "#");
+			var avaliado = $("#"+avaliacao.empresa_id+" div.avaliado div."+avaliacao.status);
+			avaliado.text(parseInt(avaliado.text())+1)
+		});		
+	});
+<%end%>
+
 <h1>Você conhece?</h1>
 
 <%= render(:partial => "layouts/empresa_vote", :collection => @empresas) %>

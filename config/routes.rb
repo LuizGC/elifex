@@ -11,6 +11,7 @@ Elifex::Application.routes.draw do
   resources :empresas
 	
 	match '/auth/:provider/callback' => 'authentications#create'
+	match '/avaliacoes' => 'avaliacoes#create', :via => :post, :as => 'avaliacoes'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

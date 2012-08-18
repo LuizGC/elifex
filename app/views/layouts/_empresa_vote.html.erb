@@ -11,17 +11,17 @@ empresa = empresa_vote
 			<p><%=empresa.setor.nome%></p>
 			
 			<div>
-				<%=link_to image_tag('vou.png'), '#'%>
-				<%=link_to image_tag('nao_vou.png'), '#'%>
+				<%=voto(true, empresa)%>
+				<%=voto(false, empresa)%>
 			</div>
 			
-			<div class="avaliacao">
-				<div class="vou avaliado">
-					30
+			<div class="avaliado">
+				<div class="true">
+					<%=empresa.quant_avaliacao_is(true)%>
 				</div>
 				
-				<div class="nao_vou avaliado">
-					20
+				<div class="false">
+					<%=empresa.quant_avaliacao_is(false)%>
 				</div>
 			</div>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817210315) do
+ActiveRecord::Schema.define(:version => 20120818002138) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "usuario_id"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(:version => 20120817210315) do
   add_index "authentications", ["token"], :name => "index_authentications_on_token", :unique => true
   add_index "authentications", ["uid"], :name => "index_authentications_on_uid", :unique => true
   add_index "authentications", ["usuario_id"], :name => "index_authentications_on_usuario_id", :unique => true
+
+  create_table "avaliacoes", :force => true do |t|
+    t.integer  "empresa_id"
+    t.boolean  "status"
+    t.integer  "usuario_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "avaliacoes", ["empresa_id"], :name => "index_avaliacoes_on_empresa_id"
+  add_index "avaliacoes", ["usuario_id"], :name => "index_avaliacoes_on_usuario_id"
 
   create_table "cidades", :force => true do |t|
     t.string   "nome"

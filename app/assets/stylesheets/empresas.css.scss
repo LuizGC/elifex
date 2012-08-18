@@ -40,10 +40,10 @@
 			p{
 				margin: 4px 0 8px 0;
 			}
-			div.avaliacao{
+			div.avaliado{
 				margin: auto;
 				width: 87px;
-				div.avaliado{
+				div{
 					border-radius: 30px;
 					padding: 0px;
 					padding-top: 5px;
@@ -51,11 +51,11 @@
 					height: 30px;
 					float: left;
 				}
-				div.vou{
+				div.true{
 					background-color: #AAD57C;
 					margin-right: 17px;
 				}
-				div.nao_vou{
+				div.false{
 					background-color: #EB684A;
 				}
 			}

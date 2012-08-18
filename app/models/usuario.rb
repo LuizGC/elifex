@@ -9,6 +9,7 @@ class Usuario < ActiveRecord::Base
   # attr_accessible :title, :body
 	
 	has_many :authentications, :dependent =>  :delete_all
+	has_many :avaliacoes, :dependent =>  :delete_all
 	validates_uniqueness_of :facebook_link, :email
 	
 	def facebook
