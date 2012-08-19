@@ -1,5 +1,7 @@
 class SetoresController < ApplicationController
-  # GET /setores
+  before_filter :logged_in
+	
+	# GET /setores
   # GET /setores.json
   def index
     @setores = Setor.all

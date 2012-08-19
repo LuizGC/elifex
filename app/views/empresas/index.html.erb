@@ -1,25 +1,8 @@
-<%content_for :js do%>
-$(document).ready(function(){
-		$('a.votar').bind('ajax:complete', function(xhr, result){
-			avaliacao = jQuery.parseJSON(result.responseText)
-			$("#"+avaliacao.empresa_id+" div #"+!avaliacao.status).remove();
-			$("#"+avaliacao.empresa_id+" div #"+avaliacao.status).attr("href", "#");
-			var avaliado = $("#"+avaliacao.empresa_id+" div.avaliado div."+avaliacao.status);
-			avaliado.text(parseInt(avaliado.text())+1);
-			$("#pontos").css("color", "#E68642" );
-			$("#pontos").text(parseInt($("#pontos").text())+5);
-			setTimeout(function(){$("#pontos").css("color", "#4A4A4A" );}, 1500);
-		});		
-	});
-<%end%>
-
-<%if usuario_signed_in?%>
-	<h4>Nome: <%=current_usuario.nome%> | Pontos: <span id="pontos"><%=current_usuario.avaliacoes.size * 5%><span></h4>
-<%end%>
+<%= render(:partial => "layouts/perfil") %>
 
 <h1>Você conhece?</h1>
 
-<%= render(:partial => "layouts/empresa_vote", :collection => @empresas) %>
+<%= render(:partial => "layouts/empresa", :collection => @empresas) %>
 
 <div class="cf"></div>
-<div class="paging"><%= paginate @empresas %></div>
+<div class="paging"><%= paginate @empresas, :remote => true %></div>

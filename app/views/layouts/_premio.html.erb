@@ -1,0 +1,15 @@
+<div class="mural premio" id="<%=premio.id%>">
+		<h3><%= premio.nome %></h3>
+		<%=image_tag("lavrasfolia.jpg")%>
+		
+		<div class="info" >
+			<p>Valor: <span id="Valor<%=premio.id%>"><%=premio.valor%></span> pontos</p>
+			
+			
+			<%=concorrer_buttom(premio)%>
+		
+		</div>
+				
+		<div class="cf"></div>
+</div>
+

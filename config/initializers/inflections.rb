@@ -16,4 +16,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'avaliacao', 'avaliacoes'
 	inflect.irregular 'setor', 'setores'
+	inflect.irregular 'cupom', 'cupons'
 end

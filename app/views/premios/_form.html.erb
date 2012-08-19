@@ -1,0 +1,33 @@
+<%= form_for(@premio) do |f| %>
+  <% if @premio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@premio.errors.count, "error") %> prohibited this premio from being saved:</h2>
+
+      <ul>
+      <% @premio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br />
+    <%= f.number_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+	<div class="field">
+    <%= f.label :disponivel %><br />
+    <%= f.check_box :disponivel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @premio.nome %>
+</p>
+
+<p>
+  <b>Pontos:</b>
+  <%= @premio.valor %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @premio.info %>
+</p>
+
+<p>
+  <b>Disponivel:</b>
+  <%= @premio.disponivel %>
+</p>
+
+
+<%= link_to 'Edit', edit_premio_path(@premio) %> |
+<%= link_to 'Back', premios_path %>

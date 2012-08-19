@@ -1,11 +1,12 @@
 class EmpresasController < ApplicationController
-  # GET /empresas
+  before_filter :logged_in, :except => [:index]
+	
+	# GET /empresas
   # GET /empresas.json
   def index
-    @empresas = Empresa.order("setor_id and created_at DESC").page(params['page']).per(6)
-
+    @empresas = Empresa.order("setor_id, created_at DESC").page(params[:page]).per(6)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :layout => false }
     end
   end
 

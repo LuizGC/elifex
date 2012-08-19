@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120818172944) do
+ActiveRecord::Schema.define(:version => 20120818203458) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "usuario_id"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20120818172944) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "cupons", :force => true do |t|
+    t.integer  "usuario_id"
+    t.integer  "premio_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "cupons", ["premio_id"], :name => "index_cupons_on_premio_id"
+  add_index "cupons", ["usuario_id"], :name => "index_cupons_on_usuario_id"
+
   create_table "empresas", :force => true do |t|
     t.string   "nome"
     t.text     "info"
@@ -55,6 +65,15 @@ ActiveRecord::Schema.define(:version => 20120818172944) do
 
   add_index "empresas", ["cidade_id"], :name => "index_empresas_on_cidade_id"
   add_index "empresas", ["setor_id"], :name => "index_empresas_on_setor_id"
+
+  create_table "premios", :force => true do |t|
+    t.string   "nome"
+    t.integer  "valor"
+    t.text     "info"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "disponivel"
+  end
 
   create_table "setores", :force => true do |t|
     t.string   "nome"

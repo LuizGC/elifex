@@ -1,4 +1,6 @@
 Elifex::Application.routes.draw do
+  resources :premios
+
   devise_for :usuarios
 	devise_scope :usuario do
 		delete '/logout' => 'devise/sessions#destroy', :as => :usuario_session
@@ -12,6 +14,7 @@ Elifex::Application.routes.draw do
 	
 	match '/auth/:provider/callback' => 'authentications#create'
 	match '/avaliacoes' => 'avaliacoes#create', :via => :post, :as => 'avaliacoes'
+	match '/cupons' => 'cupons#create', :via => :post, :as => 'cupons'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,7 +65,7 @@ Elifex::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => redirect("/empresas")
+  root :to => 'high_voltage/pages#show', :id => 'index'
 
 
   # See how all your routes lay out with "rake routes"

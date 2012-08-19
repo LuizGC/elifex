@@ -33,6 +33,15 @@ div.cf {
   height: 0px;
 }
 
+a{
+	color: $Ex_color;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
 div.content {
   margin: 0 auto;
 	padding: 2% 2% 3% 2%;
@@ -40,6 +49,10 @@ div.content {
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
+	#usuario{
+		margin: 0;
+		text-align: center;
+	}
 }
 
 
@@ -106,12 +119,6 @@ header {
 				}
 			}
 		}
-	}
-}
-
-footer{
-	a{
-		color: $Ex_color;
 	}
 }
 

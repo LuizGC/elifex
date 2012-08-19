@@ -10,6 +10,7 @@ class Usuario < ActiveRecord::Base
 	
 	has_many :authentications, :dependent =>  :delete_all
 	has_many :avaliacoes, :dependent =>  :delete_all
+	has_many :cupons, :dependent =>  :delete_all
 	validates_uniqueness_of :facebook_link, :email
 	
 	def facebook
@@ -31,5 +32,17 @@ class Usuario < ActiveRecord::Base
 		self.apply_changes(auth)
 		# Again, saving token is optional. If you haven't created the column in authentications table, this will fail
 		authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
+	end
+	
+	def has_cupom_of(premio)
+		!self.cupons.find_by_premio_id(premio.id).nil?
+	end
+	
+	def pontos
+		pontos = self.avaliacoes.size*5;
+		self.cupons.each do |cupom|
+			pontos -= cupom.premio.valor
+		end
+		pontos
 	end
 end

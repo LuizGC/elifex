@@ -1,0 +1,7 @@
+<%content_for :js do%>
+$(document).ready(function(){
+	$.get('<%=empresas_path%>', function(data) {
+		inicio_action(data);
+	});
+});	
+<%end%>
