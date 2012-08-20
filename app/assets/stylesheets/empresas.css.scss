@@ -5,33 +5,6 @@
 
 #inicio{
 	
-	div.paging{
-		text-align: center;
-		font-size:14px;
-		margin: 5px 0 0 0;
-		nav{
-			span{
-				a{
-					width:100%;
-					padding:2px 4px 3px 4px;
-					border:solid 1px #DDDDDD;
-					text-decoration:none;
-					color:#4A4A4A;
-				}
-				a:hover{
-					background:#4A4A4A;
-					color: #FAFAFA;
-				}
-			}
-			span.current{
-				ont-weight:bold;
-				color: #E68643;
-			}
-		}
-	
-	}
-	
-	
 	div.mural{
 		background-color: #F8F8F2;
 		width: 30.8855%;

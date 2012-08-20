@@ -49,6 +49,7 @@ div.content {
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
+	min-height: 530px;
 	#usuario{
 		margin: 0;
 		text-align: center;
@@ -124,6 +125,37 @@ header {
 		}
 	}
 }
+
+
+
+div.paging{
+		text-align: center;
+		font-size:14px;
+		margin: 0 0 10px 0;
+		nav{
+			span{
+				a{
+					width:100%;
+					padding:2px 4px 3px 4px;
+					border:solid 1px #DDDDDD;
+					text-decoration:none;
+					color:#4A4A4A;
+				}
+				a:hover{
+					background:#4A4A4A;
+					color: #FAFAFA;
+				}
+			}
+			span.current{
+				ont-weight:bold;
+				color: #E68643;
+			}
+		}
+	
+	}
+	
+	
+	
 
 //scaffold mensagem de erro nos formulários
 #notice {

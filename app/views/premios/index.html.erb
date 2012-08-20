@@ -2,7 +2,6 @@
 
 <h1>Premios</h1>
 
-<%= render(:partial => "layouts/premio", :collection => @premios) %>
-
-<div class="cf"></div>
 <div class="paging"><%= paginate @premios, :remote => true %></div>
+
+<%= render(:partial => "layouts/premio", :collection => @premios) %>

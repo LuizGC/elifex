@@ -2,7 +2,6 @@
 
 <h1>Você conhece?</h1>
 
-<%= render(:partial => "layouts/empresa", :collection => @empresas) %>
-
-<div class="cf"></div>
 <div class="paging"><%= paginate @empresas, :remote => true %></div>
+
+<%= render(:partial => "layouts/empresa", :collection => @empresas) %>
