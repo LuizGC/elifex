@@ -44,14 +44,18 @@ a:hover{
 
 div.content {
   margin: 0 auto;
-	padding: 2% 2% 3% 2%;
-  width: 92%;
+	padding: 1.5%;
+  width: 93%;
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
 	#usuario{
 		margin: 0;
 		text-align: center;
+	}
+	h1{
+		text-align: center;
+		margin: 0 0 5px 0;
 	}
 }
 
@@ -63,7 +67,6 @@ header {
 		float: left;
 		h1 {
 			margin: 0px;
-			margin-bottom: 2px;
 			color: $background_content;
 			font-size: 50px;
 			span{

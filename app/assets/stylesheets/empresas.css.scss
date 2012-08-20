@@ -4,16 +4,11 @@
 
 
 #inicio{
-
-	h1{
-		text-align: center;
-		margin: 0 0 20px 0;
-	}
 	
 	div.paging{
 		text-align: center;
 		font-size:14px;
-		margin: 10px 0 0 0;
+		margin: 5px 0 0 0;
 		nav{
 			span{
 				a{
@@ -38,14 +33,15 @@
 	
 	
 	div.mural{
-		width: 94%/3 + 0.368%;
+		background-color: #F8F8F2;
+		width: 30.8855%;
 		min-width: 353px;
-		margin: 0px 0.3% 0.5% 0.3%;
+		margin: 0 0.5% 0.5% 0.5%;
 		float: left;
 		position: relative;
-		border: 1px solid #4A4A4A;
+		border: 0.5px solid #CFC9CF;
 		border-radius: 8px;
-		padding:5px;
+		padding: 0 0 15px 15px;
 		h3{
 			text-align: center;
 			margin-top: 5px;
@@ -55,7 +51,7 @@
 		}
 		div.info{
 			max-width: 150px;
-			width: 46%;
+			width: 40%;
 			text-align: center;
 			float: left;
 			
