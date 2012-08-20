@@ -3,7 +3,7 @@ module PremiosHelper
 	
 	def concorrer_buttom(premio)
 		if current_usuario.has_cupom_of(premio)
-			link_without_action("Concorrer")
+			link_without_action("Participando")
 		else
 			if premio.valor <= current_usuario.pontos
 				link_with_action(premio)

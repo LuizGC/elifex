@@ -21,7 +21,7 @@ function inicio_action(data){
 		
 		$('a.concorrer').bind('ajax:complete', function(xhr, result){
 			cupom = jQuery.parseJSON(result.responseText);
-			setDisbled($("#" + cupom.premio_id + " a.concorrer"), "Concorrer");
+			setDisbled($("#" + cupom.premio_id + " a.concorrer"), "Participando");
 			setPontos(parseInt($("#Valor"+cupom.premio_id).text()));
 			$('.premio').each(function() {
 				checkValor($(this))
