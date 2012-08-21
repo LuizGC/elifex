@@ -9,4 +9,12 @@ class Empresa < ActiveRecord::Base
 	def quant_avaliacao_is(opcao)
 		self.avaliacoes.find_all_by_status(opcao).size
 	end
+	
+	def image
+		if(File.exist?("#{Rails.root}/app/assets/images/empresa#{self.id}.jpg"))
+			"empresa#{self.id}.jpg"
+		else
+			"anuncie_aqui.jpg"
+		end
+	end
 end

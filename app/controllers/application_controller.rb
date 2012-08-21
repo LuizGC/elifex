@@ -7,4 +7,22 @@ class ApplicationController < ActionController::Base
 			redirect_to root_path
     end
 	end
+	
+	protected
+	def image_path(image)
+		if root_url.to_s.match(/localhost/).nil?
+			root_url[0..-2] + view_context.image_path(image)
+		else
+			"http://img.boaspromocoes.com.br/aut/1709.jpg"
+		end
+	end
+	
+	protected
+	def root_localhost
+		if root_url.to_s.match(/localhost/).nil?
+			root_url
+		else
+			"http://www.elifex.com.br"
+		end
+	end
 end

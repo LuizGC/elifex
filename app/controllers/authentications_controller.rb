@@ -1,6 +1,7 @@
 #encoding:UTF-8
 class AuthenticationsController < ApplicationController
 	
+	
 	def create
 		auth = request.env["omniauth.auth"]
 		
@@ -20,7 +21,9 @@ class AuthenticationsController < ApplicationController
 			if usuario.save(:validate => false)
 				flash[:notice] = "Conta foi criada com sucesso."
 				
-				#usuario.facebook.link!(:link => 'https://www.facebook.com/luizcosta.pqt', :message => 'Agora ' + usuario.name + ' vai concorrer a ingressos das melhores festa, entre nessa você também!')
+				premio = Premio.first(:offset => rand(Premio.count))
+				
+				usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a premios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
 				
 				sign_in_and_redirect(:usuario, usuario)
 				else
