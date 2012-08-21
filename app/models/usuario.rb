@@ -5,7 +5,7 @@ class Usuario < ActiveRecord::Base
   devise :trackable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :nome, :facebook_link, :aniversario, :escolaridade, :genero
+  attr_accessible :email, :nome, :facebook_link, :aniversario, :escolaridade, :genero, :local, :permissao
   # attr_accessible :title, :body
 	
 	has_many :authentications, :dependent =>  :delete_all
@@ -17,12 +17,20 @@ class Usuario < ActiveRecord::Base
 		@facebook ||= FbGraph::User.me(self.authentications.first.token)
 	end
 	
+	def permissao_deny
+		self.permissao = false
+	end
+	
+	def permissao_allow
+		self.permissao = true
+	end
+	
 	def apply_changes(auth)
 		self.email = auth['info']['email']
 		self.nome = auth['extra']['raw_info']['name']
 		self.facebook_link = auth['extra']['raw_info']['link']
 		self.genero = auth['extra']['raw_info']['gender']
-		
+		self.local = auth['extra']['raw_info']['location']['name']
 		self.aniversario = Date.strptime(auth['extra']['raw_info']['birthday'].to_s, '%m/%d/%Y')
 		auth['extra']['raw_info']['education'].each {|value| self.escolaridade = value[:type]}
 	end

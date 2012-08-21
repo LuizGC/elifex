@@ -8,7 +8,12 @@ class CuponsController < ApplicationController
 			@cupon = current_usuario.cupons.build(:premio_id => premio.id)
 			respond_to do |format|
 				if @cupon.save
-					current_usuario.facebook.feed!(:message => "#{current_usuario.nome} esta concorrendo a um #{premio.nome}. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
+					begin
+						current_usuario.facebook.feed!(:message => "#{current_usuario.nome} esta concorrendo a um #{premio.nome}. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
+						current_usuario.permissao_allow
+					rescue
+						current_usuario.permissao_deny
+					end
 					format.json { render :json => @cupon }
 				end
 			end

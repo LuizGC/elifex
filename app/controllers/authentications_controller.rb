@@ -23,8 +23,12 @@ class AuthenticationsController < ApplicationController
 				
 				premio = Premio.first(:offset => rand(Premio.count))
 				
-				usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a premios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
-				
+				begin
+					usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a premios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
+					usuario.permissao_allow
+				rescue
+					usuario.permissao_deny
+				end
 				sign_in_and_redirect(:usuario, usuario)
 				else
 				flash[:error] = "Erro na criação da conta. Por favor, tente novamente."
