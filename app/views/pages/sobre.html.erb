@@ -1,33 +1,29 @@
-<%= render(:partial => "layouts/perfil") %>
 <h1>Sobre</h1>
 <div id="sobre_page">
 	<p>O Elifex é uma ferramenta de web-marketing para pesquisa de mercado.</p>
 	<h2>Participe e concorra</h2>
-	<p> É muito simples concorrer aos prêmios. Basta se conectar no facebook e votar</p>
-	<h2>Passo a passo.</h2>
+	<p> É muito simples concorrer aos prêmios. Basta se conectar no facebook e votar.</p>
+	<h2>Passo a passo</h2>
 	
 	<ul>
 		<li>
-			<p>Clique no link para o <%=link_to "Facebook","http://www.facebook.com"%>.</p>
+			<p>Clique no link  do Facebook acima.</p>
 			<%=image_tag("facebook_connect.png")%>
 		</li>
 		<li>
-			<p>Siga as instruções no <%=link_to "Facebook","http://www.facebook.com"%>.</p>
+			<p>Aceite a permissão no Facebook.</p>
 		</li>
 		<li class="sim_nao">
-			<p>Vote clicando em <%=image_tag 'vou.png'%>sim ou
-			<%=image_tag 'nao_vou.png'%>não.</p>
+			<p>Você conhece? Vote: <%=image_tag 'vou.png'%>sim ou <%=image_tag 'nao_vou.png'%>não.</p>
 		</li>
 		<li>
-			<p>Consiga pontos.</p>
-		</li>
-		
-		<li>
-			<p>Clique em <%=link_to 'Concorra', 'javascript:avoid(0);'%>.</p>
+			<p>Obtenha pontos.</p>
 		</li>
 		<li>
-			<p>Veja os premios e clique no botão.</p>
-			<%=image_tag("concorrer.png")%>
+			<p>Para concorrer entre na página inicial e clique em Premios.</p>
+		</li>
+		<li>
+			<p>Escolha a melhor opção e Boa Sorte!</p>
 		</li>
 	</ul>
 </div>

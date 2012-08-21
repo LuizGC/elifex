@@ -6,23 +6,26 @@
 #sobre_page{
 	width: 60%;
 	margin: auto;
-	
+	background-color: #F8F8F2;
+	border: 0.5px solid #CFC9CF;
+	border-radius: 8px;
+	padding: 0 15px 0 15px;
 	p{
 			margin: 14px 0 14px 0;
 	}
 	li.sim_nao{
-		padding-bottom: 30px;
+		padding-bottom: 25px;
 		position: relative;
 		p {
 			img{
 				height: 50px;
-				top: 25px;
+				top: 20px;
 				position: absolute;
 			}
 		}
 	}
 	h2{
-		margin: 5px 0 5px 0;
+		margin: 4px 0 4px 0;
 	}
 
 }

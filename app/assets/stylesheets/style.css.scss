@@ -49,14 +49,14 @@ div.content {
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
-	min-height: 530px;
+	min-height: 570px;
 	#usuario{
 		margin: 0;
 		text-align: center;
 	}
 	h1{
 		text-align: center;
-		margin: 0 0 5px 0;
+		margin: 12px 0 12px 0;
 	}
 }
 
@@ -77,6 +77,9 @@ header {
 		a{
 			margin: 0px;
 			padding: 0px;
+			position: absolute;
+			top: 70px;
+			left: 3%;
 			img{
 				margin: 0px;
 				padding: 0px;
@@ -131,7 +134,7 @@ header {
 div.paging{
 		text-align: center;
 		font-size:14px;
-		margin: 0 0 10px 0;
+		margin: 10px 0 10px 0;
 		nav{
 			span{
 				a{
