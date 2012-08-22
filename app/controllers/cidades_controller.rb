@@ -7,7 +7,7 @@ class CidadesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @cidades }
+      format.json { render :json => @cidades }
     end
   end
 
@@ -18,7 +18,7 @@ class CidadesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @cidade }
+      format.json { render :json => @cidade }
     end
   end
 
@@ -29,7 +29,7 @@ class CidadesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @cidade }
+      format.json { render :json => @cidade }
     end
   end
 
@@ -45,11 +45,11 @@ class CidadesController < ApplicationController
 
     respond_to do |format|
       if @cidade.save
-        format.html { redirect_to @cidade, notice: 'Cidade was successfully created.' }
-        format.json { render json: @cidade, status: :created, location: @cidade }
+        format.html { redirect_to @cidade, :notice => 'Cidade was successfully created.' }
+        format.json { render :json => @cidade, :status => :created, :location => @cidade }
       else
-        format.html { render action: "new" }
-        format.json { render json: @cidade.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @cidade.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,11 +61,11 @@ class CidadesController < ApplicationController
 
     respond_to do |format|
       if @cidade.update_attributes(params[:cidade])
-        format.html { redirect_to @cidade, notice: 'Cidade was successfully updated.' }
+        format.html { redirect_to @cidade, :notice => 'Cidade was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @cidade.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @cidade.errors, :status => :unprocessable_entity }
       end
     end
   end

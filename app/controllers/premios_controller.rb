@@ -17,7 +17,7 @@ class PremiosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @premio }
+      format.json { render :json => @premio }
     end
   end
 
@@ -28,7 +28,7 @@ class PremiosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @premio }
+      format.json { render :json => @premio }
     end
   end
 
@@ -44,11 +44,11 @@ class PremiosController < ApplicationController
 
     respond_to do |format|
       if @premio.save
-        format.html { redirect_to @premio, notice: 'Premio was successfully created.' }
-        format.json { render json: @premio, status: :created, location: @premio }
+        format.html { redirect_to @premio, :notice => 'Premio was successfully created.' }
+        format.json { render :json => @premio, :status => :created, :location => @premio }
       else
-        format.html { render action: "new" }
-        format.json { render json: @premio.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @premio.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,11 +60,11 @@ class PremiosController < ApplicationController
 
     respond_to do |format|
       if @premio.update_attributes(params[:premio])
-        format.html { redirect_to @premio, notice: 'Premio was successfully updated.' }
+        format.html { redirect_to @premio, :notice => 'Premio was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @premio.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @premio.errors, :status => :unprocessable_entity }
       end
     end
   end

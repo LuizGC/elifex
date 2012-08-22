@@ -15,7 +15,7 @@
     <td><%= cidade.estado %></td>
     <td><%= link_to 'Show', cidade %></td>
     <td><%= link_to 'Edit', edit_cidade_path(cidade) %></td>
-    <td><%= link_to 'Destroy', cidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', cidade, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

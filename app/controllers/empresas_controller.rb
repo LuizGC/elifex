@@ -17,7 +17,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @empresa }
+      format.json { render :json => @empresa }
     end
   end
 
@@ -28,7 +28,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @empresa }
+      format.json { render :json => @empresa }
     end
   end
 
@@ -44,11 +44,11 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
-        format.json { render json: @empresa, status: :created, location: @empresa }
+        format.html { redirect_to @empresa, :notice => 'Empresa was successfully created.' }
+        format.json { render :json => @empresa, :status => :created, :location => @empresa }
       else
-        format.html { render action: "new" }
-        format.json { render json: @empresa.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @empresa.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,11 +60,11 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.update_attributes(params[:empresa])
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @empresa, :notice => 'Empresa was successfully updated.' }
+        format.json { head  :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @empresa.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @empresa.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,7 +77,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to empresas_url }
-      format.json { head :no_content }
+      format.json { head  :no_content }
     end
   end
 end

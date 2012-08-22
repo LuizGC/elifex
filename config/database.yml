@@ -30,13 +30,13 @@ test:
   username: root
   password:
   socket: /tmp/mysql.sock
-
+	
 production:
-  adapter: mysql2
+  adapter: mysql
   encoding: utf8
   reconnect: false
-  database: elifex_production
-  pool: 5
+  database: elifexco_elifex
+  pool: 20
   username: root
-  password:
+  password: 
   socket: /tmp/mysql.sock

@@ -13,7 +13,7 @@
     <td><%= setor.nome %></td>
     <td><%= link_to 'Show', setor %></td>
     <td><%= link_to 'Edit', edit_setor_path(setor) %></td>
-    <td><%= link_to 'Destroy', setor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', setor, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
