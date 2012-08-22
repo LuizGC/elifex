@@ -29,10 +29,22 @@ class Usuario < ActiveRecord::Base
 		self.email = auth['info']['email']
 		self.nome = auth['extra']['raw_info']['name']
 		self.facebook_link = auth['extra']['raw_info']['link']
-		self.genero = auth['extra']['raw_info']['gender']
-		self.local = auth['extra']['raw_info']['location']['name']
-		self.aniversario = Date.strptime(auth['extra']['raw_info']['birthday'].to_s, '%m/%d/%Y')
-		auth['extra']['raw_info']['education'].each {|value| self.escolaridade = value[:type]}
+		
+		unless auth['extra']['raw_info']['gender'].nil?
+				self.genero = auth['extra']['raw_info']['gender']
+		end
+		
+		unless auth['extra']['raw_info']['location'].nil?
+			self.local = auth['extra']['raw_info']['location']['name']
+		end
+		
+		unless auth['extra']['raw_info']['birthday'].nil?
+			self.aniversario = Date.strptime(auth['extra']['raw_info']['birthday'].to_s, '%m/%d/%Y')
+		end
+		
+		unless auth['extra']['raw_info']['education'].nil?
+			auth['extra']['raw_info']['education'].each {|value| self.escolaridade = value[:type]}
+		end
 	end
 	
 	def apply_omniauth(auth)
