@@ -24,7 +24,7 @@ class AuthenticationsController < ApplicationController
 				premio = Premio.first(:offset => rand(Premio.count))
 				
 				begin
-					usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a premios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a premios.")
+					usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a prêmios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a prêmios.")
 					usuario.permissao_allow
 				rescue
 					usuario.permissao_deny
