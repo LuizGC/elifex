@@ -32,11 +32,11 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
+  adapter: mysql
   encoding: utf8
   reconnect: false
-  database: elifexco_elifex
+  database: elifexco_marketing
   pool: 20
-  username: root
+  username: elifexco_elifex
   password:
   socket: /tmp/mysql.sock
