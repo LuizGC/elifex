@@ -1,6 +1,7 @@
 Elifex::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+	OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   # Code is not reloaded between requests
   config.cache_classes = true
 
