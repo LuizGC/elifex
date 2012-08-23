@@ -2,6 +2,9 @@
 $(document).ready(function(){
 	$.get('<%=empresas_path%>', function(data) {
 		inicio_action(data);
+			if($(document).width() < 1260){
+				$("#inicio div.mural").width("47%");
+			}
 	});
 });	
 <%end%>

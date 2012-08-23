@@ -153,11 +153,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcmysql-adapter
   coffee-rails (~> 3.2.1)
   devise
   fb_graph
   high_voltage
   jquery-rails
+  jruby-openssl
+  json
   kaminari
   mysql2
   omniauth-facebook
