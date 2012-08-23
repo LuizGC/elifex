@@ -11,13 +11,12 @@ html {
   padding: 0px;
   font-family: "Verdana","Georgia","Palatino","Palatino Linotype","Times","Times New Roman";
 	background-color: $background;
+	min-width: 1260px;
 }
 
 body {
   width: 100%;
   height: 100%;
-	min-width: 800px;
-	max-width: 1260px;
   margin: 0px auto;
   padding: 0px;
 }
@@ -44,19 +43,19 @@ a:hover{
 
 div.content {
   margin: 0 auto;
-	padding: 1.5%;
+	padding: 1.2%;
   width: 93%;
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
-	min-height: 570px;
+	min-height: 550px;
 	#usuario{
 		margin: 0;
 		text-align: center;
 	}
 	h1{
 		text-align: center;
-		margin: 12px 0 12px 0;
+		margin: 0;
 	}
 }
 
@@ -90,7 +89,7 @@ header {
 	div.menu {
 		position: absolute;
 		bottom: 0px;
-		left: 350px;
+		left: 250px;
 		ul{
 			list-style:inside none;
 			padding:0;
