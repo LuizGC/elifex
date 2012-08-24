@@ -4,6 +4,7 @@ platforms :jruby do
   gem 'activerecord-jdbcmysql-adapter'
   gem 'jruby-openssl'
   gem 'json'
+  gem 'therubyrhino'
 end
 platforms :ruby do
   gem 'mysql2'
