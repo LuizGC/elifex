@@ -1,11 +1,20 @@
 <div class="empresa mural" id="<%=empresa.id%>">
 		<h3><%= empresa.nome %></h3>
-		<%=image_tag(empresa.image)%>
+		
+		<%
+		if empresa.link != "javascript:avoid(0);"
+			target = "_blank"
+		else
+			target = ""
+		end
+		%>
+		
+		<%=link_to image_tag(empresa.image), empresa.link , :target => target %>
 		
 		<div class="info" >
 			
 			<p><%=empresa.setor.nome%></p>
-			<p><%=empresa.cidade.nome%></p>
+			<p><%=empresa.cidade.nome%>/<%=empresa.cidade.estado%></p>
 			
 			<div>
 				<%=voto(true, empresa)%>

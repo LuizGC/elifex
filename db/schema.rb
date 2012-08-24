@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821190046) do
+ActiveRecord::Schema.define(:version => 20120824014347) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "usuario_id"
@@ -59,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20120821190046) do
     t.text     "info"
     t.integer  "setor_id"
     t.integer  "cidade_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "link",       :default => "javascript:avoid(0);", :null => false
   end
 
   add_index "empresas", ["cidade_id"], :name => "index_empresas_on_cidade_id"

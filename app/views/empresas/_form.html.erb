@@ -27,6 +27,10 @@
     <%= f.label :cidade_id %><br />
 		<%= f.collection_select :cidade_id, Cidade.all, :id, :nome %>
   </div>
+	 <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
