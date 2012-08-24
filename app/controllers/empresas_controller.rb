@@ -4,7 +4,7 @@ class EmpresasController < ApplicationController
 	# GET /empresas
   # GET /empresas.json
   def index
-    @empresas = Empresa.order("setor_id, created_at DESC").page(params[:page]).per(6)
+    @empresas = Empresa.order("created_at DESC").page(params[:page]).per(6)
     respond_to do |format|
       format.html { render :layout => false }
     end
