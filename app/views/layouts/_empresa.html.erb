@@ -1,15 +1,8 @@
 <div class="empresa mural" id="<%=empresa.id%>">
 		<h3><%= empresa.nome %></h3>
 		
-		<%
-		if empresa.link != "javascript:avoid(0);"
-			target = "_blank"
-		else
-			target = ""
-		end
-		%>
 		
-		<%=link_to image_tag(empresa.image), empresa.link , :target => target %>
+		<%=link_image(empresa)%>
 		
 		<div class="info" >
 			
@@ -17,21 +10,21 @@
 			<p><%=empresa.cidade.nome%>/<%=empresa.cidade.estado%></p>
 			
 			<div>
-				<%=voto(true, empresa)%>
-				<%=voto(false, empresa)%>
-			</div>
-			
-			<div class="avaliado">
-				<div class="true">
-					<%=empresa.quant_avaliacao_is(true)%>
+				<div class="avaliado">
+					<%=voto(true, empresa)%>
+					<div class="true">
+						<%=empresa.quant_avaliacao_is(true)%>
+					</div>
 				</div>
 				
-				<div class="false">
-					<%=empresa.quant_avaliacao_is(false)%>
+				<div class="avaliado">
+					<%=voto(false, empresa)%>
+					<div class="false">
+						<%=empresa.quant_avaliacao_is(false)%>
+					</div>
 				</div>
 			</div>
-
-		
+			
 		</div>
 				
 		<div class="cf"></div>

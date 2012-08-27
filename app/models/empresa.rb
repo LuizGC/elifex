@@ -17,4 +17,5 @@ class Empresa < ActiveRecord::Base
 			"anuncie_aqui.jpg"
 		end
 	end
+
 end

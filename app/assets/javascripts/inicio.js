@@ -6,6 +6,9 @@ function inicio_action(data){
 	}
 	
 	function setup(){
+		
+		$('a[rel*=facebox]').facebox();
+		
 		$('.pagination span a').bind('ajax:complete', function(xhr, result){
 			load(result.responseText);
 		});

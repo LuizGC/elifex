@@ -16,14 +16,7 @@ class Usuario < ActiveRecord::Base
 	def facebook
 		@facebook ||= FbGraph::User.me(self.authentications.first.token)
 	end
-	
-	def permissao_deny
-		self.permissao = false
-	end
-	
-	def permissao_allow
-		self.permissao = true
-	end
+
 	
 	def apply_changes(auth)
 		self.email = auth['info']['email']

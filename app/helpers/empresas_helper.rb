@@ -41,4 +41,13 @@ module EmpresasHelper
 		end
 	end
 	
+	def link_image(empresa)
+		if empresa.link == "javascript:avoid(0);"
+			link_to image_tag(empresa.image), image_path(empresa.image) , :rel => "facebox"
+		else
+			link_to image_tag(empresa.image), empresa.link , :target => "_blank"
+		end
+		
+	end
+	
 end

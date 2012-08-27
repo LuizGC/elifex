@@ -25,14 +25,18 @@ class AuthenticationsController < ApplicationController
 				
 				begin
 					usuario.facebook.feed!(:message => "#{usuario.nome} esta concorrendo a prêmios. Venha participar também.", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Pesquisa de Mercado",:description => "Entre no Elifex vote e concorra a prêmios.")
-					usuario.permissao_allow
+					usuario.permissao = true
 				rescue
-					usuario.permissao_deny
+					usuario.permissao = false
 				end
+				
 				sign_in_and_redirect(:usuario, usuario)
-				else
+				
+			else
+				
 				flash[:error] = "Erro na criação da conta. Por favor, tente novamente."
 				redirect_to root_url
+			
 			end
 		end
 	end
