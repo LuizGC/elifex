@@ -1,5 +1,5 @@
 class EmpresasController < ApplicationController
-  before_filter :logged_in, :except => [:index]
+  before_filter :admin, :except => [:index]
 	
 	# GET /empresas
   # GET /empresas.json

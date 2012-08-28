@@ -1,5 +1,5 @@
 class CidadesController < ApplicationController
-	before_filter :logged_in
+	before_filter :admin
   # GET /cidades
   # GET /cidades.json
   def index

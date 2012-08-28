@@ -1,5 +1,6 @@
 class PremiosController < ApplicationController
 	before_filter :logged_in
+	before_filter :admin, :except => [:index]
 	
   # GET /premios
   # GET /premios.json

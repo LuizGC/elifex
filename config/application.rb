@@ -11,6 +11,10 @@ end
 
 module Elifex
   class Application < Rails::Application
+		ENV['admin_id'] = ""
+		ENV['app_id'] =  ""
+		ENV['app_secret'] = ""
+		
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

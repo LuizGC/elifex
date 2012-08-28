@@ -1,5 +1,5 @@
 class SetoresController < ApplicationController
-  before_filter :logged_in
+  before_filter :admin
 	
 	# GET /setores
   # GET /setores.json

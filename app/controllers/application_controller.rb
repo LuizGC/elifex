@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
 	end
 	
 	protected
+	def admin
+		unless usuario_signed_in? and current_usuario.authentications.first.uid == ENV['admin_id']
+			redirect_to root_path
+    end
+	end
+	
+	#para enviar mensagem para o facebook
+	protected
 	def image_path(image)
 		if root_url.to_s.match(/localhost/).nil?
 			root_url[0..-2] + view_context.image_path(image)
@@ -21,8 +29,10 @@ class ApplicationController < ActionController::Base
 	def root_localhost
 		if root_url.to_s.match(/localhost/).nil?
 			root_url
-		else
+			else
 			"http://www.elifex.com.br"
 		end
 	end
+	#fim metodos para enviar mensagem para o facebook
+	
 end
