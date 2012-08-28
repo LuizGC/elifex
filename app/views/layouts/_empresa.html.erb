@@ -12,13 +12,11 @@
 			<div>
 				<div class="avaliado">
 					<%=voto(true, empresa)%>
+					<%=voto(false, empresa)%>
+					<br/>
 					<div class="true">
 						<%=empresa.quant_avaliacao_is(true)%>
 					</div>
-				</div>
-				
-				<div class="avaliado">
-					<%=voto(false, empresa)%>
 					<div class="false">
 						<%=empresa.quant_avaliacao_is(false)%>
 					</div>
