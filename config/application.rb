@@ -14,6 +14,8 @@ module Elifex
 		ENV['admin_id'] = ""
 		ENV['app_id'] =  ""
 		ENV['app_secret'] = ""
+		ENV['database_user'] = ""
+		ENV['database_password'] = ""
 		
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

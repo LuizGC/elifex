@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: elifexco_marketing
   pool: 20
-  username: elifexco_elifex
-  password:
+  username: <%= ENV['database_user'] %>
+  password: <%= ENV['database_password'] %>
   socket: /tmp/mysql.sock
