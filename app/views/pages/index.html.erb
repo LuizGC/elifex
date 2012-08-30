@@ -1,10 +1,16 @@
 <%content_for :js do%>
 $(document).ready(function(){
+		$.ajaxSetup({
+ 			beforeSend: function() {
+ 			$("body").prepend("<div id='loading'>Loading<br/><img src='../loading.gif'></div>");
+		 	}
+		 });
+
 	$.get('<%=empresas_path%>', function(data) {
 		inicio_action(data);
-			if($(document).width() < 1260){
-				$("#inicio div.mural").width("47%");
-			}
+		if($(document).width() < 1260){
+			$("#inicio div.mural").width("47%");
+		}
 	});
 });	
 <%end%>

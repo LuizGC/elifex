@@ -7,29 +7,43 @@ function inicio_action(data){
 	
 	function setup(){
 		
+		$("#loading").remove();
+		
+		$('a').bind('ajax:beforeSend', function(){
+		  $("body").prepend("<div id='loading'>Loading<br/><img src='../loading.gif'></div>");
+		});
+		
+		$('a').bind('ajax:error', function(){
+		  alert("Ocorreu algum erro!");
+			window.location.reload();
+		});
+		
 		$('a[rel*=facebox]').facebox();
 		
-		$('.pagination span a').bind('ajax:complete', function(xhr, result){
-			load(result.responseText);
-		});
 		
 		$('.aviso_loga').click(function(){
-			facebook_path();
+		  facebook_path();
 		});
-
+		
+		
+		$('.pagination span a').bind('ajax:complete', function(xhr, result){
+		  load(result.responseText);
+		});
 		
 		$('#usuario a').bind('ajax:complete', function(xhr, result){
 			load(result.responseText);
 		});
 		
 		$('a.concorrer').bind('ajax:complete', function(xhr, result){
-			cupom = jQuery.parseJSON(result.responseText);
-			setDisbled($("#" + cupom.premio_id + " a.concorrer"), "Participando");
-			setPontos(parseInt($("#Valor"+cupom.premio_id).text()));
-			$('.premio').each(function() {
-				checkValor($(this))
+					cupom = jQuery.parseJSON(result.responseText);
+					setDisbled($("#" + cupom.premio_id + " a.concorrer"), "Participando");
+					setPontos(parseInt($("#Valor"+cupom.premio_id).text()));
+					$('.premio').each(function() {
+						checkValor($(this))
+					});
+					
+					$("#loading").remove();
 			});
-		});
 		
 		$('a.votar').bind('ajax:complete', function(xhr, result){
 			avaliacao = jQuery.parseJSON(result.responseText)
@@ -40,6 +54,8 @@ function inicio_action(data){
 			$("#pontos").css("color", "#E68642" );
 			$("#pontos").text(parseInt($("#pontos").text())+5);
 			setTimeout(function(){$("#pontos").css("color", "#4A4A4A" );}, 1500);
+			
+			$("#loading").remove();
 		});
 	}
 	
