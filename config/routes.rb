@@ -1,5 +1,12 @@
 Elifex::Application.routes.draw do
-  resources :premios
+  
+	
+	constraints(:host => "elifex.com.br") do
+		root :to => redirect("http://www.elifex.com.br")
+		match '/*path', :to => redirect {|params| "http://www.elifex.com.br/#{params[:path]}"}
+	end
+	
+	resources :premios
 
   devise_for :usuarios
 	devise_scope :usuario do
