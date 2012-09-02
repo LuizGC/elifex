@@ -5,6 +5,8 @@
 
 #inicio{
 	
+	
+	
 	div.mural{
 		background-color: #F8F8F2;
 		width: 31.3133%;
@@ -22,6 +24,8 @@
 			float: left;
 			width: 75%;
 		}
+		
+		
 		div.info{
 			width: 25%;
 			text-align: center;
@@ -34,7 +38,7 @@
 					height:35px;
 					line-height:29px;
 					text-decoration:none;
-					width:140px;
+					width:90%;
 					cursor: pointer;
 					margin-top: 30px;
 				}
@@ -85,6 +89,17 @@
 		}
 	}
 
+
+div.premio{
+			width:40%;
+			img{
+				width: 70%
+			}
+			div.info{
+				width: 30%;
+			}
+			
+		}
 
 }
 

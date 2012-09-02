@@ -6,4 +6,8 @@
 
 <%= render(:partial => "layouts/empresa", :collection => @empresas) %>
 
+	<% if usuario_signed_in? %>
+		<%= render(:partial => "layouts/premio", :collection => @premios) %>
+	<%end%>
+
 <div class="cf"></div>

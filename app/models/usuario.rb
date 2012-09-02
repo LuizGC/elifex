@@ -52,7 +52,7 @@ class Usuario < ActiveRecord::Base
 	end
 	
 	def pontos
-		pontos = self.avaliacoes.size*5;
+		pontos = self.avaliacoes.size;
 		self.cupons.each do |cupom|
 			pontos -= cupom.premio.valor
 		end

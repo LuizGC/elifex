@@ -36,12 +36,14 @@ function inicio_action(data){
 		
 		$('a.concorrer').bind('ajax:complete', function(xhr, result){
 					cupom = jQuery.parseJSON(result.responseText);
-					setDisbled($("#" + cupom.premio_id + " a.concorrer"), "Participando");
+														
+					setDisbled($("#Premio" + cupom.premio_id + " a.concorrer"), "Participando");
 					setPontos(parseInt($("#Valor"+cupom.premio_id).text()));
+														
 					$('.premio').each(function() {
 						checkValor($(this))
 					});
-					
+										
 					$("#loading").remove();
 			});
 		
@@ -52,15 +54,48 @@ function inicio_action(data){
 			var avaliado = $("#"+avaliacao.empresa_id+" div.avaliado div."+avaliacao.status);
 			avaliado.text(parseInt(avaliado.text())+1);
 			$("#pontos").css("color", "#E68642" );
-			$("#pontos").text(parseInt($("#pontos").text())+5);
+			$("#pontos").text(parseInt($("#pontos").text())+1);
 			setTimeout(function(){$("#pontos").css("color", "#4A4A4A" );}, 1500);
-			
+											
+			$('.premio').each(function() {
+					count_vote($(this))
+			});
+											
+											
 			$("#loading").remove();
 		});
 	}
 	
 	function setPontos(valor){
 		$("#pontos").text(parseInt($("#pontos").text()) - valor);
+	}
+
+	function count_vote(element){
+		valor = element.children(".info").children("p").children("span");
+		faltam = parseInt(valor.text()) - parseInt($("#pontos").text());
+		texto = "Faltam " + faltam + " pontos.";
+		element.children(".info").children("a").children("button").text(texto);
+		if(parseInt($("#pontos").text()) >=		parseInt(valor.text())){
+			link = element.children(".info").children("a");
+			link.attr("href", "/cupons?premio_id="+element.attr("id").split("Premio")[1]);
+			link.removeClass("disabled").addClass("concorrer");
+			link.children("button").text("Concorrer");
+		}
+		
+		
+		$('a.concorrer').bind('ajax:complete', function(xhr, result){
+													cupom = jQuery.parseJSON(result.responseText);
+													
+													setDisbled($("#Premio" + cupom.premio_id + " a.concorrer"), "Participando");
+													setPontos(parseInt($("#Valor"+cupom.premio_id).text()));
+													
+													$('.premio').each(function() {
+																						checkValor($(this))
+																						});
+													
+													$("#loading").remove();
+													});
+		
 	}
 	
 	function checkValor(element){

@@ -5,6 +5,7 @@ class EmpresasController < ApplicationController
   # GET /empresas.json
   def index
     @empresas = Empresa.order("RAND()")
+		@premios = Premio.all
     respond_to do |format|
       format.html { render :layout => false }
     end
