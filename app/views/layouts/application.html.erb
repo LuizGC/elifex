@@ -20,9 +20,21 @@
 					alert("Para a sua segurança utilize outro navegador.");
 					window.location.href="https://www.google.com/intl/pt-BR/chrome/";
 			}
-			function facebook_path(){
-				window.location.href="<%=url_for(page_path('sobre'))%>";
-			}
+			
+			
+			<% unless usuario_signed_in? %>
+				function facebook_path(){
+					$('img[alt="Facebook_connect"]').effect( "shake", {times:4}, 200 );
+					setTimeout(function(){ 
+						$('img[alt="Facebook_connect"]').css("border", "10px solid");
+						$('img[alt="Facebook_connect"]').css("border-color", "red");
+						$('img[alt="Facebook_connect"]').parent().append('<img src="/seta.png"  style="position: absolute; top: 6px">');
+						$('img[alt="Facebook_connect"]').parent().append('<div style="left: 15%;position: absolute;top: 90%;color:red; font-size: 16px; font-weight:bold;">Clique aqui para votar.</div>');
+					},2000)
+				}
+			<%end%>
+			
+			
 			<%= yield :js%>
 		</script>
 	</head>
