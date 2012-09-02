@@ -3,7 +3,6 @@ Elifex::Application.routes.draw do
 	
 	constraints(:host => "elifex.com.br") do
 		root :to => redirect("http://www.elifex.com.br")
-		match '/*path', :to => redirect {|params| "http://www.elifex.com.br/#{params[:path]}"}
 	end
 	
 	resources :premios
