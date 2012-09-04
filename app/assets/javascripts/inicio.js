@@ -73,13 +73,13 @@ function inicio_action(data){
 	function count_vote(element){
 		valor = element.children(".info").children("p").children("span");
 		faltam = parseInt(valor.text()) - parseInt($("#pontos").text());
-		texto = "Faltam " + faltam + " pontos.";
+		texto = "Faltam " + faltam + " votos.";
 		element.children(".info").children("a").children("button").text(texto);
 		if(parseInt($("#pontos").text()) >=		parseInt(valor.text())){
 			link = element.children(".info").children("a");
 			link.attr("href", "/cupons?premio_id="+element.attr("id").split("Premio")[1]);
 			link.removeClass("disabled").addClass("concorrer");
-			link.children("button").text("Concorrer");
+			link.children("button").text("Clique Aqui");
 		}
 		
 		

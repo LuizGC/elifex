@@ -9,7 +9,7 @@ class CuponsController < ApplicationController
 			respond_to do |format|
 				if @cupon.save
 					begin
-						current_usuario.facebook.feed!(:message => "#{current_usuario.nome} esta concorrendo a um #{premio.nome}. Participe e Concorra!", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Conhecendo melhor !",:description => "Entre, vote e concorra a premios.")
+						current_usuario.facebook.feed!(:message => "Estou concorrendo a um #{premio.nome}. Participe também!", :picture => image_path(premio.image), :link => root_localhost,:name => "Elifex - Conhecendo melhor !",:description => "Entre, vote e concorra a um Ipad.")
 						current_usuario.permissao = true
 						rescue
 						current_usuario.permissao = false

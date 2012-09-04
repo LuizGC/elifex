@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Elifex - Conhecendo melhor !</title>
+		<title>Elifex - Venha Conhecer!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="description" content="O Elifex é uma ferramenta de web-marketing para pesquisa de mercado. Para concorrer a prêmios é muito simples basta se conectar e votar." />
+		<!--<meta name="description" content="O Elifex é uma ferramenta de web-marketing para pesquisa de mercado. Para concorrer a prêmios é muito simples basta se conectar e votar." />-->
+		<!--<meta name="description" content="Tem algo especial esperando por você.">-->
 		<meta http-equiv="content-language" content="pt-br" />
 		<meta name="author" content="Luiz Costa">
 		<meta name="keywords" content="Concorra Prêmios Grátis Pesquisa Mercado Elifex Web Marketing Marca Propaganda" />
+		<link rel="image_src" href="<%=image_path("logo.png")%>" />
 		<%= csrf_meta_tags %>
 		<%= favicon_link_tag%>
 		
@@ -34,15 +36,29 @@
 						$('img[alt="Facebook_connect"]').css("border", "10px solid");
 						$('img[alt="Facebook_connect"]').css("border-color", "red");
 						$('img[alt="Facebook_connect"]').parent().append('<img src="/seta.png"  style="position: absolute; top: 6px" id="seta">');
-						$('img[alt="Facebook_connect"]').parent().append('<div id="facebook_aviso" style="left: 15%;position: absolute;top: 90%;color:red; font-size: 16px; font-weight:bold;">Clique aqui para votar.</div>');
+						$('img[alt="Facebook_connect"]').parent().append('<div id="facebook_aviso" style="left: 32%;position: absolute;top: 95%;color:red; font-size: 16px; font-weight:bold;">Clique aqui.</div>');
 					},2000)
 				}
 			<%end%>
+
 			
 			
 			<%= yield :js%>
 		</script>
 	</head>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34429284-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 	<body>
 		
 	<%= render "layouts/header" %>

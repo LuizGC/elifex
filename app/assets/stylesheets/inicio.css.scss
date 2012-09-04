@@ -9,11 +9,11 @@
 	
 	div.mural{
 		background-color: #F8F8F2;
-		width: 31.3133%;
+		width: 31.142%;
 		margin: 0.5% 0.5% 0.5% 0.5%;
 		float: left;
 		position: relative;
-		border: 0.5px solid #CFC9CF;
+		border: 2px solid #CFC9CF;
 		border-radius: 8px;
 		padding: 0 0 10px 10px;
 		h3{
@@ -68,7 +68,7 @@
 				a{
 					img{
 						float: none;
-						width: 35%;
+						width: 45%;
 					}
 				}
 				div{
@@ -92,6 +92,7 @@
 
 div.premio{
 			width:40%;
+			margin-left: 30%;
 			img{
 				width: 70%
 			}
@@ -101,6 +102,12 @@ div.premio{
 			
 		}
 
+}
+
+h2{
+  img{
+   width: 5%;
+ }
 }
 
 #loading{

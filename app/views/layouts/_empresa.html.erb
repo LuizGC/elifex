@@ -1,5 +1,5 @@
 <div class="empresa mural" id="<%=empresa.id%>">
-		<h3><%= empresa.nome %></h3>
+		<!--<h3><%= empresa.nome %></h3>-->
 		
 		
 		<%=link_image(empresa)%>
@@ -8,18 +8,11 @@
 			
 			<p><%=empresa.setor.nome%></p>
 			<p><%=empresa.cidade.nome%>/<%=empresa.cidade.estado%></p>
-			
+			<p>Conhece?</p>
 			<div>
 				<div class="avaliado">
 					<%=voto(true, empresa)%>
 					<%=voto(false, empresa)%>
-					<br/>
-					<div class="true">
-						<%=empresa.quant_avaliacao_is(true)%>
-					</div>
-					<div class="false">
-						<%=empresa.quant_avaliacao_is(false)%>
-					</div>
 				</div>
 			</div>
 			
@@ -27,4 +20,3 @@
 				
 		<div class="cf"></div>
 </div>
-

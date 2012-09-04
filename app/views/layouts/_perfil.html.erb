@@ -1,6 +1,6 @@
-<h4 id="usuario">
 		<%if usuario_signed_in?%>
-			Nome: <%=current_usuario.nome%> | Pontos: <span id="pontos"><%=current_usuario.pontos%></span>  
+<h4 id="usuario">
+			Nome: <%=current_usuario.nome%> | Quantidade Votos: <span id="pontos"><%=current_usuario.pontos%></span>  
 			<%if params[:controller] == 'premios'%>
 				|<%=link_to 'Vote', empresas_path, :remote => true%>
 			<%else%>
@@ -8,7 +8,10 @@
 					|<%=link_to 'Prêmios', premios_path, :remote => true%>
 				<%end%>
 			<%end%>
-		<%else%>
-			<h2>Vote e concorra a um Ipad.</h2>
-		<%end%>
 </h4>
+
+<%else%>
+<h2 style="text-align: center;">Vote e concorra a um Ipad.</h2>
+		<%end%>
+
+ 
