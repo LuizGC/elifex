@@ -1,13 +1,8 @@
 function setup(){
   
-  $('a').bind('ajax:beforeSend', function(){
-				  $("body").prepend("<div id='loading'>Loading<br/><img src='../loading.gif'></div>");
-				  });
+  setLoading();
   
-  $('a').bind('ajax:error', function(){
-				  alert("Ocorreu algum erro!");
-				  window.location.reload();
-				  });
+  
   
   $('a[rel*=facebox]').facebox();
   
@@ -44,50 +39,72 @@ function setup(){
 						  });
   
   
+  function setCurrentlyAction(element){
+	 element.css("border-color", "#DE7E3B");
+	 element.children(".info").children("h3").css("color", "#DE7E3B");
+  }
+  
+  function cleanAction(){
+	 $(".empresa").attr("style", "");
+	 $(".empresa").children(".info").children("h3").attr("style", "");
+  }
+  
   function next_action(element){
-	 $("h3").removeClass("next");
+	 cleanAction();
 	 if(element.length > 0){
 		info =element.children(".info");
-		if(info.children(".avaliado").children().length > 2)
-		  info.children("h3").addClass("next");
-		else
+		if(info.children(".avaliado").children().length > 2){
+		  setCurrentlyAction(element);
+		}else
 		  next_action(element.next());
 	 }else{
 		votou_em_tudo = true;
 		$(".empresa").each(function(index) {
 		 info = $(this).children(".info");
 		 if(info.children(".avaliado").children().length > 2){
-			  info.children("h3").addClass("next");
+			  setCurrentlyAction($(this));
 			  alert("Você não votou em todas as empresas!");
 			  votou_em_tudo = false;
 			  return false;
 		 }
 		 });
-		
-		if(votou_em_tudo){
-		  jQuery.facebox(function(){
-			 jQuery.get('premios', function(data) {
-					 jQuery.facebox(data);
-					 $('a.concorrer').bind('ajax:complete', function(xhr, result){
-						  cupom = jQuery.parseJSON(result.responseText);
-						  setDisbled($("#Premio" + cupom.premio_id + " a.concorrer"), "Participando");
-						  $("#loading").remove();
-					 });
-					 $('a').bind('ajax:beforeSend', function(){
-						  $("body").prepend("<div id='loading'>Loading<br/><img src='../loading.gif'></div>");
-					 });
-
-			 })
-		  });
-		}
-		
+		showPremio(votou_em_tudo);
 	 }
   }
   next_action($(".empresa").first());
   
   
+  function showPremio(votou_em_tudo){
+	 if(votou_em_tudo){
+		jQuery.facebox(function(){
+							jQuery.get('premios', function(data) {
+										  jQuery.facebox(data);
+										  $('a.concorrer').bind('ajax:complete', function(xhr, result){
+																		cupom = jQuery.parseJSON(result.responseText);
+																		setDisbled($("#Premio" + cupom.premio_id + " a.concorrer"), "Participando");
+																	    $("#loading").remove();
+																		});
+										  setLoading();
+										  });
+							});
+	 }
+	 
+  }
+  
   function setPontos(valor){
 	 $("#pontos").text(parseInt($("#pontos").text()) - valor);
+  }
+  
+  function setLoading(){
+	 
+	 $('a').bind('ajax:beforeSend', function(){
+					 $("body").prepend("<div id='loading'>Loading<br/><img src='../loading.gif'></div>");
+					 });
+	 
+	 $('a').bind('ajax:error', function(){
+					 alert("Ocorreu algum erro!");
+					 window.location.reload();
+					 });
   }
   
   
