@@ -1,14 +1,11 @@
-<%= render(:partial => "layouts/perfil") %>
-
-<h2 style="text-align: center;">Para concorrer é necessário votar em <%=image_tag("vou.png")%> ou <%=image_tag("nao_vou.png")%></h2>
-
-<!--<div class="paging"></div>-->
+<h1>Vote e Concorra a um Ipad</h1>
 
 <%= render(:partial => "layouts/empresa", :collection => @empresas) %>
 
-	<% if usuario_signed_in? %>
-		<h2 style="text-align: center;">Prêmios</h2>
-		<%= render(:partial => "layouts/premio", :collection => @premios) %>
-	<%end%>
-
 <div class="cf"></div>
+
+<%content_for :js do%>
+$(document).ready(function(){
+	setup();
+});
+<%end%>

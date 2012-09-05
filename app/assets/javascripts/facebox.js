@@ -39,7 +39,7 @@
         append('<div class="loading"><img src="'+$.facebox.settings.loadingImage+'"/></div>')
 
       $('#facebox').show().css({
-        top:	getPageScroll()[1] + (getPageHeight() / 10),
+        top:	50,
         left:	$(window).width() / 2 - ($('#facebox .popup').outerWidth() / 2)
       })
 

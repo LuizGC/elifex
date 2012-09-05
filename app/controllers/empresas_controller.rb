@@ -7,7 +7,7 @@ class EmpresasController < ApplicationController
     @empresas = Empresa.order("RAND()")
 		@premios = Premio.all
     respond_to do |format|
-      format.html { render :layout => false }
+      format.html
     end
   end
 

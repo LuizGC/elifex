@@ -15,7 +15,7 @@ module PremiosHelper
 	
 	private
 	def link_with_action(premio)
-		link_to content_tag(:button, "Concorrer"), cupons_path(:premio_id => premio.id), :remote => true, :class => :concorrer, :method => :post
+		link_to content_tag(:button, "Clique Aqui"), cupons_path(:premio_id => premio.id), :remote => true, :class => :concorrer, :method => :post
 	end
 	
 	private

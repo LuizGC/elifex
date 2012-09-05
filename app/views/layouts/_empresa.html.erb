@@ -6,15 +6,15 @@
 		
 		<div class="info" >
 			
-			<p><%=empresa.setor.nome%></p>
-			<p><%=empresa.cidade.nome%>/<%=empresa.cidade.estado%></p>
-			<p>Conhece?</p>
-			<div>
-				<div class="avaliado">
-					<%=voto(true, empresa)%>
-					<%=voto(false, empresa)%>
-				</div>
+			<p><%=empresa.setor.nome%> - <%=empresa.cidade.nome%>/<%=empresa.cidade.estado%></p>
+			<h3>Conhece?</h3>
+	
+			<div class="avaliado">
+				<%=voto(true, empresa)%>
+				<%=voto(false, empresa)%>
+				<div class="cf"></div>
 			</div>
+			
 			
 		</div>
 				

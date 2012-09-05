@@ -26,18 +26,7 @@
 			
 			<% unless usuario_signed_in? %>
 				function facebook_path(){
-					if($('#seta').length > 0){
-						$('img[alt="Facebook_connect"]').css("border", "none");
-						$('#seta').remove();
-						$('#facebook_aviso').remove();
-					}
-					$('img[alt="Facebook_connect"]').effect( "shake", {times:4}, 200 );
-					setTimeout(function(){ 
-						$('img[alt="Facebook_connect"]').css("border", "10px solid");
-						$('img[alt="Facebook_connect"]').css("border-color", "red");
-						$('img[alt="Facebook_connect"]').parent().append('<img src="/seta.png"  style="position: absolute; top: 6px" id="seta">');
-						$('img[alt="Facebook_connect"]').parent().append('<div id="facebook_aviso" style="left: 32%;position: absolute;top: 95%;color:red; font-size: 16px; font-weight:bold;">Clique aqui.</div>');
-					},2000)
+					window.location.href="<%=url_for facebook_path%>";
 				}
 			<%end%>
 

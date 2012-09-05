@@ -1,0 +1,105 @@
+// Place all the styles related to the Empresas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#empresas{
+
+	
+	
+	div.mural{
+		background-color: #F0F0F0;
+		margin: 0 0 1.5% 1%;
+		float: left;
+		border: 1px solid #CFC9CF;
+		border-radius: 8px;
+		padding: 0;
+		text-align: center;
+		width: 23.546%;
+		h3{
+			margin: 5px auto;
+			border-top: 1px solid #CCCCCC;
+			width: 90%;
+			padding: 3px 0 1px;
+		}
+		img{
+			border-radius: 10px 10px 0 0;
+			margin: 1%;
+			width: 98%;
+		}
+		
+		
+		div.info{
+			width: 100%;
+			
+			a:hover{
+				text-decoration:none;
+			}
+			p{
+				margin: 4px 0 5px 0;
+				font-size: 86%;
+			}
+			
+			h3.next{
+				color: orange;
+			}
+			
+			div.avaliado{
+				margin: 5px auto;
+				padding: 2% 2% 0;
+				width: 50%;
+				a{
+					img{
+						width: 47%;
+						margin: 0;
+						border-radius: 8px;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+div.premio{
+			width:100%;
+			text-align: center;
+			img{
+				width: 100%
+			}
+			div.info{
+				width: 40%;
+				margin-left: 29%;
+				a{
+					button{
+						color:#555555;
+						font-weight:bold;
+						height:35px;
+						line-height:29px;
+						text-decoration:none;
+						width:90%;
+						cursor: pointer;
+					}
+				}
+				a.disabled{
+					opacity: 0.5;
+					pointer-events: none;
+					cursor: default;
+					button{
+						pointer-events: none;
+						cursor: default;
+					}
+				}
+			}
+		}
+
+#loading{
+	  height: 100%;
+    opacity: 0.5;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+		background-color: #4A4A4A;
+		text-align: center;
+		padding-top: 20%;
+}

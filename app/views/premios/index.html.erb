@@ -1,9 +1,3 @@
-<%= render(:partial => "layouts/perfil") %>
-
-<h1>Prêmios</h1>
-
-<div class="paging"><%= paginate @premios, :remote => true %></div>
-
 <%= render(:partial => "layouts/premio", :collection => @premios) %>
 
 <div class="cf"></div>
