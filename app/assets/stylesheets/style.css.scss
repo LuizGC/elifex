@@ -49,11 +49,18 @@ div.content {
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
-	h1{
+	h1, h2{
 		text-align: center;
 		margin: 0;
-		padding: 17px;
 		color: $Ex_color;
+	}
+	h1{
+	 font-size: 60px;
+    padding: 10px 0 3px;
+	}
+	h2{
+	 font-size: 40px;
+    padding: 1px 0 15px;
 	}
 }
 
