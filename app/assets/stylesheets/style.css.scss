@@ -49,19 +49,20 @@ div.content {
 	background-color: $background_content;
 	border-radius: 8px;
 	color: $background;
-	h1, h2{
+	h1, h2, h3{
 		text-align: center;
 		margin: 0;
 		color: $Ex_color;
 	}
 	h1{
-	 font-size: 60px;
+	 font-size: 50px;
     padding: 10px 0 3px;
 	}
 	h2{
-	 font-size: 40px;
-    padding: 1px 0 15px;
+	 font-size: 35px;
+    padding: 1px 0 10px;
 	}
+
 }
 
 
@@ -197,4 +198,3 @@ div.paging{
     list-style: square;
   }
 }
-
